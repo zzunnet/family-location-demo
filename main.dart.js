@@ -46399,7 +46399,7 @@ return null},
 $S:340}
 A.CR.prototype={
 J(a){var s=null,r=this.c,q=A.en(r*0.28)
-return new A.i7(!0,A.aaq(q,new A.BV(A.b2o(s,s,new A.zU("assets/branding/moa-icon.png",s,s)),r,r,B.h4,s),B.bY),s)}}
+return new A.i7(!0,A.aaq(q,new A.BV(A.b2o(s,s,new A.zU("assets/branding/moa-heart-house.png",s,s)),r,r,B.h4,s),B.bY),s)}}
 A.ks.prototype={
 gNp(){var s,r,q,p,o,n,m,l,k,j,i=this,h=null,g=i.c,f=i.d
 g=A.aOD(B.ai,h,h,g,B.k).au2(B.k,B.cN,B.cN,B.b9,B.Nz,B.lP,g,f)
