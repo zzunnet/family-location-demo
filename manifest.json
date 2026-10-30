@@ -1,7 +1,7 @@
 {
-  "name": "모아 · 가족의 안심 일상",
+  "name": "모아 · 가까운 사람들과 함께",
   "short_name": "모아",
-  "description": "가상의 가족으로 체험하는 모아 위치공유 데모",
+  "description": "가상의 구성원으로 체험하는 모아 위치공유 데모",
   "start_url": ".",
   "scope": ".",
   "display": "standalone",
