@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>모아 · 테마 색상 비교</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f7f6fb;color:#241e32;font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Noto Sans KR",sans-serif}main{max-width:1440px;margin:auto;padding:32px 20px 48px}h1{font-size:clamp(24px,4vw,34px);line-height:1.3;margin:8px 0 12px;letter-spacing:-1px}p{margin:8px 0 20px;color:#665d73}.tag{display:inline-block;padding:4px 10px;border-radius:8px;background:#eae3ff;color:#5f41c9;font-size:12px;font-weight:700}.options{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 18px}button,.link{font:inherit;font-weight:600;cursor:pointer;border:1px solid #ddd5e9;border-radius:12px;background:#fff;padding:10px 14px;color:inherit;text-decoration:none}button{display:inline-flex;align-items:center;gap:8px}button[aria-pressed=true]{border-color:#7357ff;box-shadow:0 0 0 2px #7357ff30}button:focus-visible,a:focus-visible{outline:3px solid #7357ff;outline-offset:3px}.swatch{width:16px;height:16px;border-radius:5px;background:var(--color)}figure{margin:0;background:#fff;border:1px solid #e5deef;border-radius:16px;overflow:hidden}.overview img{width:100%;height:auto;display:block}.focus{width:min(100%,420px);aspect-ratio:401.5 / 979;margin:auto}.focus img{width:400%;height:auto;max-width:none;display:block}figcaption{text-align:center;margin:12px 0 24px;color:#665d73;font-size:14px}.links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:16px 0 32px}.link{font-size:14px}details{margin:32px auto 0;padding:20px;background:white;border:1px solid #e5deef;border-radius:16px}summary{cursor:pointer;font-weight:700}details p{font-size:14px;margin:12px 0}details img{display:block;width:min(100%,760px);height:auto;margin:16px auto 0;border-radius:12px}footer{font-size:13px;color:#746b80;margin:28px 0}footer a{color:#5f41c9}[hidden]{display:none!important}@media(max-width:600px){main{padding:24px 12px 36px}.options{gap:7px}button{padding:9px 11px;font-size:14px}.overview{border-radius:10px}details{padding:16px}}
+</style>
+</head>
+<body>
+<main>
+<span class="tag">모아 · 색상 시안</span>
+<h1>어떤 색의 모아가 좋을까요?</h1>
+<p>같은 홈 화면을 네 가지 색으로 비교했어요. 색상 버튼을 누르면 해당 시안을 크게 볼 수 있어요.</p>
+<div class="options" role="group" aria-label="비교할 색상 선택">
+<button type="button" data-index="-1" aria-pressed="true">전체 비교</button>
+<button type="button" data-index="0" aria-pressed="false"><span class="swatch" style="--color:#7357FF" aria-hidden="true"></span>1. 바이올렛</button>
+<button type="button" data-index="1" aria-pressed="false"><span class="swatch" style="--color:#FF6B5E" aria-hidden="true"></span>2. 코랄</button>
+<button type="button" data-index="2" aria-pressed="false"><span class="swatch" style="--color:#00AA80" aria-hidden="true"></span>3. 에메랄드</button>
+<button type="button" data-index="3" aria-pressed="false"><span class="swatch" style="--color:#3478FF" aria-hidden="true"></span>4. 블루</button>
+</div>
+<figure id="overview" class="overview"><a href="color-comparison.png" target="_blank" rel="noopener"><img src="color-comparison.png" width="1606" height="979" alt="왼쪽부터 바이올렛, 코랄, 에메랄드, 블루 색상의 모아 홈 시안"></a></figure>
+<figure id="focus" class="focus" hidden><img id="focus-image" src="color-comparison.png" alt="선택한 색상의 모아 홈 시안"></figure>
+<figcaption id="caption" aria-live="polite">1 바이올렛 · 2 코랄 · 3 에메랄드 · 4 블루 — 밝은 테마로 비교</figcaption>
+<div class="links"><a class="link" href="color-comparison.png" target="_blank" rel="noopener">원본 이미지 크게 열기 ↗</a><a class="link" href="color-comparison.png" download="moa-color-comparison.png">PNG 파일 내려받기</a></div>
+<details open><summary>바이올렛의 밝은·어두운 테마도 보기</summary><p>앞서 만든 바이올렛·살구·민트 조합의 두 테마 시안이에요.</p><a href="violet-light-dark.png" target="_blank" rel="noopener"><img src="violet-light-dark.png" width="1024" height="1536" loading="lazy" alt="바이올렛을 중심으로 살구·민트를 조합한 밝은 테마와 어두운 테마"></a><div class="links"><a class="link" href="violet-light-dark.png" target="_blank" rel="noopener">밝은·어두운 시안 원본 열기 ↗</a></div></details>
+<footer>색감과 분위기를 검토하기 위한 AI 생성 디자인 시안입니다. 표시한 색상 코드를 기준으로 비교해 주세요. <a href="../">기존 모아 데모 열기</a></footer>
+</main>
+<script>
+const themes=[['바이올렛','#7357FF'],['코랄','#FF6B5E'],['에메랄드','#00AA80'],['블루','#3478FF']];
+const overview=document.querySelector('#overview'),focus=document.querySelector('#focus'),picture=document.querySelector('#focus-image'),caption=document.querySelector('#caption');
+for(const button of document.querySelectorAll('[data-index]'))button.addEventListener('click',()=>{const index=Number(button.dataset.index);for(const candidate of document.querySelectorAll('[data-index]'))candidate.setAttribute('aria-pressed',String(candidate===button));overview.hidden=index!==-1;focus.hidden=index===-1;if(index===-1){caption.textContent='1 바이올렛 · 2 코랄 · 3 에메랄드 · 4 블루 — 밝은 테마로 비교';}else{const [name,color]=themes[index];picture.style.transform=`translateX(${-25*index}%)`;picture.alt=`${name} 색상의 모아 홈 디자인 시안`;caption.textContent=`${index+1}. ${name} ${color}`;}});
+</script>
+</body>
+</html>
