@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="referrer" content="no-referrer"><meta name="robots" content="noindex,nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="light dark"><title>모아 · 내 위치 확인</title>
+<link rel="icon" href="../favicon.png"><link rel="stylesheet" href="location.css"><script src="location.js" defer></script></head>
+<body><main><header><a href="../">‹ 모아</a><span>이 기기에서만</span></header>
+<h1>내 위치 확인</h1><p class="intro">내 iPhone의 실제 위치를 확인해 보세요.<br>모아 서버에 보내거나 가족과 공유하지 않아요.</p>
+<section class="location" aria-label="기기 위치 확인 결과"><div class="target" aria-hidden="true">◎</div><p class="caption">현재 위치 정확도</p><strong id="accuracy">—</strong><p id="time">아직 확인하지 않았어요</p>
+<dl><div><dt>위도</dt><dd id="latitude">—</dd></div><div><dt>경도</dt><dd id="longitude">—</dd></div></dl></section>
+<p id="status" role="status" aria-live="polite">버튼을 누르면 Safari에서 위치 권한을 요청해요.</p>
+<button id="start">내 위치 확인</button><button id="stop" class="secondary">중지하고 지우기</button>
+<p class="note">한 번 확인하면 위치 수집을 종료해요. 다시 확인하려면 버튼을 눌러 주세요. 화면을 떠나면 표시도 지워져요.</p>
+<p class="note">정확도는 기기·실내 환경·‘정확한 위치’ 설정에 따라 달라져요. 지도·이동기록·백그라운드 추적은 사용하지 않아요. 브라우저와 OS의 위치 서비스 동작은 해당 기기의 설정을 따라요.</p>
+</main></body></html>
